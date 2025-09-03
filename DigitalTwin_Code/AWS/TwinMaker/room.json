@@ -1,0 +1,111 @@
+{
+  "workspaceId": "door",
+  "isSingleton": false,
+  "componentTypeId": "RoomSensorComponent",
+  "propertyDefinitions": {
+    "airQualityState": {
+      "dataType": {
+        "type": "STRING"
+      },
+      "isTimeSeries": false,
+      "isRequiredInEntity": false,
+      "isExternalId": false,
+      "isStoredExternally": false,
+      "isImported": false,
+      "isFinal": false,
+      "isInherited": false
+    },
+    "co2": {
+      "dataType": {
+        "type": "DOUBLE"
+      },
+      "isTimeSeries": false,
+      "isRequiredInEntity": false,
+      "isExternalId": false,
+      "isStoredExternally": false,
+      "isImported": false,
+      "isFinal": false,
+      "isInherited": false
+    },
+    "humidity": {
+      "dataType": {
+        "type": "DOUBLE"
+      },
+      "isTimeSeries": false,
+      "isRequiredInEntity": false,
+      "isExternalId": false,
+      "isStoredExternally": false,
+      "isImported": false,
+      "isFinal": false,
+      "isInherited": false
+    },
+    "light": {
+      "dataType": {
+        "type": "DOUBLE"
+      },
+      "isTimeSeries": false,
+      "isRequiredInEntity": false,
+      "isExternalId": false,
+      "isStoredExternally": false,
+      "isImported": false,
+      "isFinal": false,
+      "isInherited": false
+    },
+    "occupancy": {
+      "dataType": {
+        "type": "STRING"
+      },
+      "isTimeSeries": false,
+      "isRequiredInEntity": false,
+      "isExternalId": false,
+      "isStoredExternally": false,
+      "isImported": false,
+      "isFinal": false,
+      "isInherited": false
+    },
+    "roomTimestamp": {
+      "dataType": {
+        "type": "STRING"
+      },
+      "isTimeSeries": false,
+      "isRequiredInEntity": false,
+      "isExternalId": false,
+      "isStoredExternally": false,
+      "isImported": false,
+      "isFinal": false,
+      "isInherited": false
+    },
+    "temperature": {
+      "dataType": {
+        "type": "DOUBLE"
+      },
+      "isTimeSeries": false,
+      "isRequiredInEntity": false,
+      "isExternalId": false,
+      "isStoredExternally": false,
+      "isImported": false,
+      "isFinal": false,
+      "isInherited": false
+    }
+  },
+  "functions": {
+    "dataReader": {
+      "implementedBy": {
+        "lambda": {
+          "arn": "arn:aws:lambda:ap-northeast-1:123456789012:function:YourDataReaderLambda"
+        },
+        "isNative": false
+      },
+      "isInherited": false
+    }
+  },
+  "creationDateTime": "2025-04-23T04:21:46.598Z",
+  "updateDateTime": "2025-04-24T14:30:17.963Z",
+  "arn": "arn:aws:iottwinmaker:eu-central-1:820242922190:workspace/door/component-type/RoomSensorComponent",
+  "isAbstract": false,
+  "isSchemaInitialized": false,
+  "status": {
+    "state": "ACTIVE",
+    "error": {}
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "@context": "dtmi:dtdl:context;2",
+  "@id": "dtmi:Room;1",
+  "@type": "Interface",
+  "displayName": "Room",
+  "contents": [
+
+    {
+      "@type": "Property",
+      "name": "roomTimestamp",
+      "schema": "dateTime"
+    },
+    {
+      "@type": "Property",
+      "name": "temperature",
+      "schema": "double"
+    },
+    {
+      "@type": "Property",
+      "name": "humidity",
+      "schema": "double"
+    },
+    {
+      "@type": "Property",
+      "name": "light",
+      "schema": "double"
+    },
+    {
+      "@type": "Property",
+      "name": "co2",
+      "schema": "double"
+    },
+    {
+      "@type": "Property",
+      "name": "occupancy",
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "string",
+        "enumValues": [
+          { "name": "occupied", "enumValue": "occupied" },
+          { "name": "not_occupied", "enumValue": "not_occupied" }
+        ]
+      }
+    },
+    {
+      "@type": "Property",
+      "name": "airQualityState",
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "string",
+        "enumValues": [
+          { "name": "normal", "enumValue": "normal" },
+          { "name": "too_high", "enumValue": "too_high" }
+        ]
+      }
+    }
+  ]
+}

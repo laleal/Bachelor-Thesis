@@ -1,0 +1,84 @@
+{
+  "StartAt": "ProcessingParallel",
+  "States": {
+    "ProcessingParallel": {
+      "Type": "Parallel",
+      "Branches": [
+        {
+          "StartAt": "ProcessDoorData",
+          "States": {
+            "ProcessDoorData": {
+              "Type": "Task",
+              "Resource": "arn:aws:lambda:eu-north-1:820242922190:function:ProcessDoorData",
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "ProcessRoomData",
+          "States": {
+            "ProcessRoomData": {
+              "Type": "Task",
+              "Resource": "arn:aws:lambda:eu-north-1:820242922190:function:ProcessRoomData",
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "DetectAnomalies",
+          "States": {
+            "DetectAnomalies": {
+              "Type": "Task",
+              "Resource": "arn:aws:lambda:eu-north-1:820242922190:function:DetectAnomalies",
+              "End": true
+            }
+          }
+        }
+      ],
+      "ResultPath": "$.processedData",
+      "Next": "PrepareUpdateData"
+    },
+    "PrepareUpdateData": {
+      "Type": "Pass",
+      "Parameters": {
+        "doorInfo.$": "$.processedData[0]",
+        "roomsInfo.$": "$.processedData[1]",
+        "anomalies.$": "$.processedData[2]"
+      },
+      "Next": "ParallelUpdates"
+    },
+    "ParallelUpdates": {
+      "Type": "Parallel",
+      "Branches": [
+        {
+          "StartAt": "UpdateTwinMaker",
+          "States": {
+            "UpdateTwinMaker": {
+              "Type": "Task",
+              "Resource": "arn:aws:lambda:eu-north-1:820242922190:function:update_DoorTwin",
+              "Comment": "Your existing TwinMaker Lambda - ZERO changes needed",
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "SendNotification",
+          "States": {
+            "SendNotification": {
+              "Type": "Task",
+              "Resource": "arn:aws:lambda:eu-north-1:820242922190:function:Notification",
+              "End": true
+            }
+          }
+        }
+      ],
+      "Next": "WriteToTimestream"
+    },
+    "WriteToTimestream": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:eu-north-1:820242922190:function:add_to_timestream",
+      "Comment": "Log processed data to Timestream for historical analysis",
+      "End": true
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "@context": "dtmi:dtdl:context;2",
+  "@id": "dtmi:Door;1",
+  "@type": "Interface",
+  "displayName": "Door",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "doorTimestamp",
+      "schema": "dateTime"
+    },
+    {
+      "@type": "Property",
+      "name": "angle",
+      "schema": "double"
+    },
+    {
+      "@type": "Property",
+      "name": "gyro",
+      "schema": "double"
+    },
+    {
+      "@type": "Property",
+      "name": "magnet",
+      "schema": "boolean"
+    },
+    {
+      "@type": "Property",
+      "name": "doorState",
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "string",
+        "enumValues": [
+          { "name": "open", "enumValue": "open" },
+          { "name": "closed", "enumValue": "closed" },
+          { "name": "partially_open", "enumValue": "partially_open" }
+        ]
+      }
+    },
+    {
+      "@type": "Property",
+      "name": "slammedAnomaly",
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "string",
+        "enumValues": [
+          { "name": "none", "enumValue": "none" },
+          { "name": "slammed", "enumValue": "slammed" }
+        ]
+      }
+    },
+    {
+      "@type": "Property",
+      "name": "conflictAnomaly",
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "string",
+        "enumValues": [
+          { "name": "none", "enumValue": "none" },
+          { "name": "conflict", "enumValue": "conflict" }
+        ]
+      }
+    },
+    {
+      "@type": "Relationship",
+      "name": "isConnectedTo",
+      "target": "dtmi:Room;1",
+      "displayName": "Connects to Room"
+    }
+  ]
+}

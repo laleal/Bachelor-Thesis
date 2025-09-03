@@ -1,0 +1,100 @@
+{
+  "workspaceId": "door",
+  "isSingleton": false,
+  "componentTypeId": "DoorSensorComponent",
+  "propertyDefinitions": {
+    "angle": {
+      "dataType": {
+        "type": "DOUBLE"
+      },
+      "isTimeSeries": false,
+      "isRequiredInEntity": false,
+      "isExternalId": false,
+      "isStoredExternally": false,
+      "isImported": false,
+      "isFinal": false,
+      "isInherited": false
+    },
+    "conflictAnomaly": {
+      "dataType": {
+        "type": "STRING"
+      },
+      "isTimeSeries": false,
+      "isRequiredInEntity": false,
+      "isExternalId": false,
+      "isStoredExternally": false,
+      "isImported": false,
+      "isFinal": false,
+      "isInherited": false
+    },
+    "doorState": {
+      "dataType": {
+        "type": "STRING"
+      },
+      "isTimeSeries": false,
+      "isRequiredInEntity": false,
+      "isExternalId": false,
+      "isStoredExternally": false,
+      "isImported": false,
+      "isFinal": false,
+      "isInherited": false
+    },
+    "doorTimestamp": {
+      "dataType": {
+        "type": "STRING"
+      },
+      "isTimeSeries": false,
+      "isRequiredInEntity": false,
+      "isExternalId": false,
+      "isStoredExternally": false,
+      "isImported": false,
+      "isFinal": false,
+      "isInherited": false
+    },
+    "gyro": {
+      "dataType": {
+        "type": "DOUBLE"
+      },
+      "isTimeSeries": false,
+      "isRequiredInEntity": false,
+      "isExternalId": false,
+      "isStoredExternally": false,
+      "isImported": false,
+      "isFinal": false,
+      "isInherited": false
+    },
+    "magnet": {
+      "dataType": {
+        "type": "BOOLEAN"
+      },
+      "isTimeSeries": false,
+      "isRequiredInEntity": false,
+      "isExternalId": false,
+      "isStoredExternally": false,
+      "isImported": false,
+      "isFinal": false,
+      "isInherited": false
+    },
+    "slammedAnomaly": {
+      "dataType": {
+        "type": "STRING"
+      },
+      "isTimeSeries": false,
+      "isRequiredInEntity": false,
+      "isExternalId": false,
+      "isStoredExternally": false,
+      "isImported": false,
+      "isFinal": false,
+      "isInherited": false
+    }
+  },
+  "creationDateTime": "2025-04-23T04:21:46.598Z",
+  "updateDateTime": "2025-04-24T14:30:17.963Z",
+  "arn": "arn:aws:iottwinmaker:eu-central-1:820242922190:workspace/door/component-type/DoorSensorComponent",
+  "isAbstract": false,
+  "isSchemaInitialized": false,
+  "status": {
+    "state": "ACTIVE",
+    "error": {}
+  }
+}
