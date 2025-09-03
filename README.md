@@ -6,7 +6,8 @@ This thesis explores the implementation of digital twins in the cloud of two maj
 --- 
  
 ## 🎥 Short Video 
-A short video of the prototype in action is available here: [link to your video]. 
+
+A short video explaining the project can be downloaded here: [Download Video (120MB)](video.mp4)
  
 --- 
 ## Prototype 
